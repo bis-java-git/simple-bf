@@ -7,6 +7,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.stream.IntStream;
+
 /**
  * FizzBuzz Program to output Fizz, Buzz or FizzBuzz.
  * Business Rules 1: if a number can be divided by 3 then output Fizz
@@ -53,15 +55,18 @@ public class FizzBuzzApplication implements CommandLineRunner {
     public void run(String... args) {
         LOG.info("EXECUTING : simple fizzbuzz process test\n");
 
-        for (Integer i = 1; i <= 100; i++) {
+        IntStream.rangeClosed(1, 100).forEach(i -> {
             LOG.info("{}: {}\n", i, fizzBuzzService.process(i));
-        }
+        });
+
         LOG.info("END : simple fizzbuzz process test\n");
 
         LOG.info("EXECUTING : advance fizzbuzz process test\n");
-        for (Integer i = 1; i <= 100; i++) {
+
+        IntStream.rangeClosed(1, 100).forEach(i -> {
             LOG.info("{}: {}\n", i, fizzBuzzService.advanceProcess(i));
-        }
+        });
+
         LOG.info("END : advance fizzbuzz process test\n");
     }
 }
