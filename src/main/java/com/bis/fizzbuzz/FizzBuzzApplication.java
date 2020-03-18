@@ -55,17 +55,13 @@ public class FizzBuzzApplication implements CommandLineRunner {
     public void run(String... args) {
         LOG.info("EXECUTING : simple fizzbuzz process test\n");
 
-        IntStream.rangeClosed(1, 100).forEach(i -> {
-            LOG.info("{}: {}\n", i, fizzBuzzService.process(i));
-        });
+        IntStream.rangeClosed(1, 100).forEach(i -> LOG.info("{}: {}\n", i, fizzBuzzService.process(i)));
 
         LOG.info("END : simple fizzbuzz process test\n");
 
         LOG.info("EXECUTING : advance fizzbuzz process test\n");
 
-        IntStream.rangeClosed(1, 100).forEach(i -> {
-            LOG.info("{}: {}\n", i, fizzBuzzService.advanceProcess(i));
-        });
+        IntStream.rangeClosed(1, 100).forEach(i -> LOG.info("{}: {}\n", i, fizzBuzzService.advanceProcess(i)));
 
         LOG.info("END : advance fizzbuzz process test\n");
     }

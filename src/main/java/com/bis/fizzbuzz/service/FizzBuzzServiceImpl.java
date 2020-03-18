@@ -25,7 +25,7 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
      * @return Aggregated output for FizzBuzz business process
      */
     @Override
-    public String process(Integer theNumberToProcess) {
+    public String process(final Integer theNumberToProcess) {
         LOG.info("EXECUTING : process [{}]\n", theNumberToProcess);
         Optional<Integer> numberToProcess = Optional.ofNullable(theNumberToProcess);
         if (numberToProcess.isPresent()) {
@@ -58,7 +58,7 @@ public class FizzBuzzServiceImpl implements FizzBuzzService {
      * @return Aggregated output for FizzBuzz business process
      */
     @Override
-    public String advanceProcess(Integer theNumberToProcess) {
+    public String advanceProcess(final Integer theNumberToProcess) {
         LOG.info("EXECUTING : advanceProcess [{}]\n", theNumberToProcess);
         Optional<Integer> numberToProcess = Optional.ofNullable(theNumberToProcess);
         if (numberToProcess.isPresent()) {
